@@ -1,0 +1,29 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+ 
+int main()
+{
+    setlocale(LC_ALL, "rus");
+    double j; 
+    cout << "Введите j: ";
+    cin >> j;
+ 
+    double Oi = j, 
+           Oi1 = 0; 
+ 
+    while ( true)
+    {
+        Oi1 = 0.5 * (Oi + 3 * j / (2 * Oi * Oi + j / Oi));
+ 
+        if (abs(Oi1 - Oi) < pow(10.0, -5.0))
+            break; 
+ 
+        Oi = Oi1; 
+    }
+ 
+    cout << Oi << endl;
+ 
+    system("pause");
+    return 0;
+}
